@@ -8,16 +8,19 @@ const testimonials = [
   {
     name: 'Punyakeerthi BL',
     role: 'Senior Software Engineer',
+    image: '/images/testimonial-punyakeerthi.jpeg',
     text: "GenAI People's mentorship programme helped me become more visible in my current organization. I was invited to join the AI team in my company and got a good salary hike.",
   },
   {
     name: 'Sunil Vijendra',
     role: 'Director - Engineering',
+    image: '/images/testimonial-sunil.jpeg',
     text: 'Highly recommended for anyone looking to gain hands-on expertise in GenAI! What stood out to me was the highly customized learning journey tailored to my background and goals.',
   },
   {
     name: 'Swapnil Vernekar',
     role: 'Devops & Deployment Specialist',
+    image: '/images/testimonial-swapnil.jpeg',
     text: "Guidance provided by GenAI People's mentorship programme is like a partnership rather than just teaching.",
   },
 ]
@@ -49,18 +52,21 @@ const projects = [
   {
     title: 'GenAI-Powered AI Interviewer Platform',
     author: 'Sunil Vijendra',
+    image: '/images/project-interviewer.jpeg',
     desc: 'An agentic AI system that conducts interviews, evaluates responses, generates reports, and interacts with structured scoring frameworks.',
     tags: ['GPT-4', 'RAG', 'Agents'],
   },
   {
     title: 'GenAI Powered Employee Onboarding (HR-Mate)',
     author: 'Punyakeerthi BL',
+    image: '/images/project-onboarding.jpg',
     desc: 'An AI-powered onboarding agent that gathers inputs, communicates between HR and tech teams, retrieves relevant documentation using RAG.',
     tags: ['LangChain', 'RAG', 'Agents'],
   },
   {
     title: 'SocialMind: Real-Time Social Media AI Insights',
     author: 'Manjunath R',
+    image: '/images/project-socialmind.jpeg',
     desc: 'An autonomous monitoring agent that tracks trends, analyzes sentiment, triggers alerts, and generates insight summaries in real-time.',
     tags: ['OpenAI', 'Agents', 'Real-time'],
   },
@@ -134,6 +140,18 @@ export default function Home() {
               </Link>
             </div>
           </motion.div>
+
+          {/* Wistia Video */}
+          <motion.div
+            initial={{ opacity: 0, y: 32 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+            className="relative mx-auto max-w-4xl px-6 pb-24"
+          >
+            <div className="rounded-2xl overflow-hidden border border-border-light shadow-[0_0_60px_rgba(124,58,237,0.12)]">
+              <wistia-player media-id="vjvi8vxvet" aspect="1.7777777777777777" />
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -154,9 +172,7 @@ export default function Home() {
               <AnimatedSection key={i} delay={i * 0.1}>
                 <div className="glass-card rounded-2xl p-6 h-full flex flex-col">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent/30 to-accent-deep/30 flex items-center justify-center font-display font-700 text-sm text-accent">
-                      {t.name[0]}
-                    </div>
+                    <img src={t.image} alt={t.name} className="w-10 h-10 rounded-full object-cover border border-border-light" />
                     <div>
                       <p className="font-600 text-sm text-text">{t.name}</p>
                       <p className="text-xs text-text-dim">{t.role}</p>
@@ -243,8 +259,8 @@ export default function Home() {
             {projects.map((p, i) => (
               <AnimatedSection key={i} delay={i * 0.1}>
                 <div className="glass-card rounded-2xl overflow-hidden group h-full flex flex-col">
-                  <div className="h-48 bg-gradient-to-br from-accent-deep/20 via-surface to-card flex items-center justify-center">
-                    <Cpu size={40} className="text-accent/30 group-hover:text-accent/50 transition-colors" />
+                  <div className="h-48 overflow-hidden">
+                    <img src={p.image} alt={p.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
                   <div className="p-6 flex-1 flex flex-col">
                     <h3 className="font-display font-600 text-base text-text mb-1">{p.title}</h3>

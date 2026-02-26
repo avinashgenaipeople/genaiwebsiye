@@ -1,42 +1,48 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowRight, Cpu, ExternalLink } from 'lucide-react'
+import { ArrowRight, ExternalLink } from 'lucide-react'
 import AnimatedSection from '../components/AnimatedSection'
 
 const projects = [
   {
     title: 'GenAI-Powered AI Interviewer Platform',
     author: 'Sunil Vijendra',
+    image: '/images/project-interviewer.jpeg',
     desc: 'An agentic AI system that conducts interviews, evaluates responses, generates reports, and interacts with structured scoring frameworks, reducing recruiter workload through intelligent automation.',
     tags: ['GPT-4', 'RAG', 'Agents'],
   },
   {
     title: 'GenAI Powered Employee Onboarding (HR-Mate)',
     author: 'Punyakeerthi BL',
+    image: '/images/project-onboarding.jpg',
     desc: 'An AI-powered onboarding agent that gathers inputs, communicates between HR and tech teams, retrieves relevant documentation using RAG, and generates structured job descriptions.',
     tags: ['LangChain', 'RAG', 'Agents'],
   },
   {
     title: 'SocialMind: Real-Time Social Media AI Insights',
     author: 'Manjunath R',
+    image: '/images/project-socialmind.jpeg',
     desc: 'An autonomous monitoring agent that tracks trends, analyzes sentiment, triggers alerts, and generates insight summaries, all in real-time with multi-step orchestration.',
     tags: ['OpenAI', 'Agents', 'Real-time'],
   },
   {
     title: 'AI LinkedIn Profile Optimizer',
     author: 'Priya Sharma',
+    image: '/images/project-4.webp',
     desc: 'An intelligent agent that reads resumes, extracts structured information, compares it against market standards, and generates improvement recommendations automatically.',
     tags: ['LangChain', 'Tool-calling', 'Agents'],
   },
   {
     title: 'Historical Data Generator',
     author: 'Rajesh Kumar',
+    image: '/images/project-5.webp',
     desc: 'A retrieval-powered agentic system that fetches contextual historical data, synthesizes narratives, and allows interactive exploration through multi-step reasoning.',
     tags: ['RAG', 'Agents', 'Research'],
   },
   {
     title: 'Agoda Chatbot: OpenAI API Chrome Extension',
     author: 'Amit Patel',
+    image: '/images/project-6.png',
     desc: 'A tool-using AI assistant that analyzes hotel reviews, pricing, amenities, and location data, then generates structured comparisons for informed decisions.',
     tags: ['OpenAI', 'Tool-calling', 'Agents'],
   },
@@ -136,8 +142,8 @@ export default function MembersWork() {
             {projects.map((p, i) => (
               <AnimatedSection key={i} delay={i * 0.08}>
                 <div className="glass-card rounded-2xl overflow-hidden group h-full flex flex-col">
-                  <div className="h-48 bg-gradient-to-br from-accent-deep/20 via-surface to-card flex items-center justify-center">
-                    <Cpu size={40} className="text-accent/30 group-hover:text-accent/50 transition-colors" />
+                  <div className="h-48 overflow-hidden">
+                    <img src={p.image} alt={p.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
                   <div className="p-6 flex-1 flex flex-col">
                     <h3 className="font-display font-600 text-base text-text mb-1 group-hover:text-accent-bright transition-colors">
