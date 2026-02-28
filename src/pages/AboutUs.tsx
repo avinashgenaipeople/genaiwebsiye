@@ -34,22 +34,23 @@ const team = [
   {
     name: 'Sowmya Manohar',
     role: 'Account Manager',
-    desc: '17+ years as a techie and engineering leader',
-  },
-  {
-    name: 'Pramila Sunilkumar',
-    role: 'Account Manager',
-    desc: '24+ years of industry experience',
-  },
-  {
-    name: 'Sangeeta',
-    role: 'Account Manager',
-    desc: '17+ years of experience',
+    quote: 'Keeping all mentees accountable to their goals',
+    desc: 'Leveraging 17+ years of experience as a techie and engineering leader, Sowmya empowers our mentees to stay focused, overcome obstacles, and relentlessly pursue their career ambitions.',
+    linkedin: 'https://www.linkedin.com/in/sowmya-manohar/',
   },
   {
     name: 'Ekta Choudhary',
     role: 'Growth Consultant',
-    desc: 'Deep empathy and exceptional listening skills',
+    quote: 'Helping mentees identify challenges, set goals, and create tailored roadmaps',
+    desc: 'With deep empathy and exceptional listening skills, Ekta serves as an ideal guide for anyone seeking clarity on their professional path.',
+    linkedin: '',
+  },
+  {
+    name: 'Anjana K',
+    role: 'Associate Growth Consultant',
+    quote: 'Helping mentees define challenges and goals to craft tailored roadmaps',
+    desc: 'With deep analytical skills and a genuine interest in people, Anjana is ideally suited to guide professionals in crafting a clear, actionable career roadmap.',
+    linkedin: 'https://www.linkedin.com/in/anjana-k-a6b949211/',
   },
 ]
 
@@ -245,16 +246,31 @@ export default function AboutUs() {
           </AnimatedSection>
 
           {/* Rest of the team */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {team.map((member, i) => (
               <AnimatedSection key={i} delay={i * 0.08}>
-                <div className="glass-card rounded-2xl p-6 group hover:border-accent/30 transition-all h-full flex flex-col items-center text-center">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-accent/30 to-accent-deep/30 flex items-center justify-center font-display font-700 text-xl text-accent mb-4 group-hover:from-accent/40 group-hover:to-accent-deep/40 transition-colors">
-                    {member.name[0]}
+                <div className="glass-card rounded-2xl p-6 group hover:border-accent/30 transition-all h-full flex flex-col">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accent/30 to-accent-deep/30 flex items-center justify-center font-display font-700 text-lg text-accent shrink-0 group-hover:from-accent/40 group-hover:to-accent-deep/40 transition-colors">
+                      {member.name[0]}
+                    </div>
+                    <div>
+                      <h3 className="font-display font-600 text-base text-text">{member.name}</h3>
+                      <p className="text-xs text-accent font-mono">{member.role}</p>
+                    </div>
                   </div>
-                  <h3 className="font-display font-600 text-lg text-text">{member.name}</h3>
-                  <p className="text-sm text-accent mt-1 font-mono">{member.role}</p>
-                  <p className="text-sm text-text-muted leading-relaxed mt-3 flex-1">{member.desc}</p>
+                  <p className="text-sm text-accent/80 italic mb-3">&ldquo;{member.quote}&rdquo;</p>
+                  <p className="text-sm text-text-muted leading-relaxed flex-1">{member.desc}</p>
+                  {member.linkedin && (
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs text-accent hover:text-accent-bright transition-colors font-500 mt-4 pt-3 border-t border-border/50"
+                    >
+                      Connect on LinkedIn <ArrowRight size={13} />
+                    </a>
+                  )}
                 </div>
               </AnimatedSection>
             ))}
