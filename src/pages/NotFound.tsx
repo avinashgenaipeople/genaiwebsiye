@@ -27,7 +27,7 @@ export default function NotFound() {
           </p>
           <Link
             to="/"
-            className="mt-10 inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-accent-deep to-accent text-white font-600 hover:shadow-[0_0_32px_rgba(124,58,237,0.5)] transition-shadow"
+            className="mt-10 inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-accent-deep to-accent text-white font-600 hover:shadow-[0_0_32px_rgba(233,71,63,0.5)] transition-shadow"
           >
             <ArrowLeft size={18} />
             Return to Home

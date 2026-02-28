@@ -23,6 +23,36 @@ const testimonials = [
     image: '/images/testimonial-swapnil.jpeg',
     text: "Guidance provided by GenAI People's mentorship programme is like a partnership rather than just teaching.",
   },
+  {
+    name: 'Jamil Ahmed',
+    role: 'Technical Lead',
+    image: '',
+    text: "Along with technical knowledge in generative AI, I've gained valuable feedback on how to think about problems and systems from a senior's perspective.",
+  },
+  {
+    name: 'Sureshkumar Mani',
+    role: 'Standard Chartered',
+    image: '',
+    text: 'The GenAI Mentorship Program transformed my career, helping me move to a Senior Associate role at Standard Chartered.',
+  },
+  {
+    name: 'Santosh Jadhawar',
+    role: 'Early-Career Professional',
+    image: '',
+    text: "From the very beginning, I've felt genuinely supported and guided. The mentorship has helped me with technical skills and soft skills.",
+  },
+  {
+    name: 'Rakesh S. L.',
+    role: 'Mid-Level Developer',
+    image: '',
+    text: "With Jerry's mentoring, I am able to enhance my abilities and align with current market demands.",
+  },
+  {
+    name: 'Venkatesh K',
+    role: 'Mid-Level Developer',
+    image: '',
+    text: "I can track my progress each week. It's really a complete career growth perspective.",
+  },
 ]
 
 const offerings = [
@@ -101,13 +131,13 @@ export default function Home() {
         <div className="absolute inset-0 dot-grid opacity-40" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent-deep/10 rounded-full blur-[120px]" />
 
-        <div className="relative mx-auto max-w-4xl px-6 pt-32 sm:pt-40 pb-24 text-center">
+        <div className="relative mx-auto max-w-4xl px-6 pt-8 sm:pt-12 pb-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border-light bg-surface/60 text-xs font-mono text-accent mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border-light bg-surface/60 text-xs font-mono text-accent mb-5">
               <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
               Now enrolling senior developers
             </div>
@@ -119,15 +149,15 @@ export default function Home() {
               <span className="gradient-text">Agentic AI</span>
             </h1>
 
-            <p className="mt-6 text-base sm:text-lg text-text-muted max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-4 text-base sm:text-lg text-text-muted max-w-2xl mx-auto leading-relaxed">
               Learn how to build real-world Generative AI systems, including Agentic AI
               applications that can think, plan, use tools, and execute multi-step workflows.
             </p>
 
-            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 to="/apply-now"
-                className="group px-8 py-3.5 rounded-xl bg-gradient-to-r from-accent-deep to-accent text-white font-600 text-base hover:shadow-[0_0_32px_rgba(124,58,237,0.5)] transition-all flex items-center gap-2"
+                className="group px-8 py-3.5 rounded-xl bg-gradient-to-r from-accent-deep to-accent text-white font-600 text-base hover:shadow-[0_0_32px_rgba(233,71,63,0.5)] transition-all flex items-center gap-2"
               >
                 Apply Now
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -146,19 +176,19 @@ export default function Home() {
             initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-            className="relative mx-auto max-w-4xl px-6 pb-24"
+            className="relative mx-auto max-w-4xl px-6 mt-8 pb-4"
           >
-            <div className="rounded-2xl overflow-hidden border border-border-light shadow-[0_0_60px_rgba(124,58,237,0.12)]">
+            <div className="rounded-2xl overflow-hidden border border-border-light shadow-[0_0_60px_rgba(233,71,63,0.12)]">
               <wistia-player media-id="vjvi8vxvet" aspect="1.7777777777777777" />
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Testimonials preview */}
-      <section className="relative py-24 bg-surface">
+      {/* Testimonials carousel */}
+      <section className="relative py-20 bg-surface overflow-hidden">
         <div className="mx-auto max-w-7xl px-6">
-          <AnimatedSection className="text-center mb-14">
+          <AnimatedSection className="text-center mb-12">
             <h2 className="font-display font-700 text-3xl md:text-4xl">
               What our mentees <span className="gradient-text">have to say</span>
             </h2>
@@ -166,29 +196,46 @@ export default function Home() {
               Our mentees don't just learn Generative AI concepts. They learn how to architect and deploy agentic systems that integrate with APIs, databases, tools, and business workflows.
             </p>
           </AnimatedSection>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((t, i) => (
-              <AnimatedSection key={i} delay={i * 0.1}>
-                <div className="glass-card rounded-2xl p-6 h-full flex flex-col">
-                  <div className="flex items-center gap-3 mb-4">
+        {/* Scrolling carousel */}
+        <div className="relative">
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-surface to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-surface to-transparent z-10 pointer-events-none" />
+
+          <div className="flex animate-[scroll_40s_linear_infinite] hover:[animation-play-state:paused] w-max gap-6 px-6">
+            {[...testimonials, ...testimonials].map((t, i) => (
+              <div key={i} className="glass-card rounded-2xl p-6 flex flex-col w-[340px] shrink-0">
+                <div className="flex items-center gap-3 mb-4">
+                  {t.image ? (
                     <img src={t.image} alt={t.name} className="w-10 h-10 rounded-full object-cover border border-border-light" />
-                    <div>
-                      <p className="font-600 text-sm text-text">{t.name}</p>
-                      <p className="text-xs text-text-dim">{t.role}</p>
+                  ) : (
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent/30 to-accent-deep/30 flex items-center justify-center font-display font-700 text-sm text-accent shrink-0">
+                      {t.name[0]}
                     </div>
+                  )}
+                  <div>
+                    <p className="font-600 text-sm text-text">{t.name}</p>
+                    <p className="text-xs text-text-dim">{t.role}</p>
                   </div>
-                  <p className="text-sm text-text-muted leading-relaxed flex-1">{t.text}</p>
                 </div>
-              </AnimatedSection>
+                <p className="text-sm text-text-muted leading-relaxed flex-1">&ldquo;{t.text}&rdquo;</p>
+                <div className="mt-4 pt-3 border-t border-border/50 flex items-center gap-1">
+                  {[...Array(5)].map((_, s) => (
+                    <svg key={s} className="w-3.5 h-3.5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
+        </div>
 
-          <AnimatedSection className="text-center mt-10">
-            <Link to="/testimonials" className="inline-flex items-center gap-1.5 text-sm text-accent hover:text-accent-bright transition-colors font-500">
-              View more testimonials <ArrowRight size={15} />
-            </Link>
-          </AnimatedSection>
+        <div className="text-center mt-10">
+          <Link to="/testimonials" className="inline-flex items-center gap-1.5 text-sm text-accent hover:text-accent-bright transition-colors font-500">
+            View more testimonials <ArrowRight size={15} />
+          </Link>
         </div>
       </section>
 
@@ -201,7 +248,7 @@ export default function Home() {
           </h2>
           <Link
             to="/apply-now"
-            className="mt-6 inline-flex px-8 py-3.5 rounded-xl bg-gradient-to-r from-accent-deep to-accent text-white font-600 hover:shadow-[0_0_32px_rgba(124,58,237,0.5)] transition-shadow"
+            className="mt-6 inline-flex px-8 py-3.5 rounded-xl bg-gradient-to-r from-accent-deep to-accent text-white font-600 hover:shadow-[0_0_32px_rgba(233,71,63,0.5)] transition-shadow"
           >
             Apply now
           </Link>
@@ -235,7 +282,7 @@ export default function Home() {
           <AnimatedSection className="text-center mt-12">
             <Link
               to="/apply-now"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-accent-deep to-accent text-white font-600 hover:shadow-[0_0_32px_rgba(124,58,237,0.5)] transition-shadow"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-accent-deep to-accent text-white font-600 hover:shadow-[0_0_32px_rgba(233,71,63,0.5)] transition-shadow"
             >
               Want to bring career transformation? <ArrowRight size={18} />
             </Link>
@@ -325,7 +372,7 @@ export default function Home() {
             </h2>
             <Link
               to="/apply-now"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-accent-deep to-accent text-white font-600 hover:shadow-[0_0_32px_rgba(124,58,237,0.5)] transition-shadow"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-accent-deep to-accent text-white font-600 hover:shadow-[0_0_32px_rgba(233,71,63,0.5)] transition-shadow"
             >
               Apply Now <ArrowRight size={18} />
             </Link>

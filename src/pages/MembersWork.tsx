@@ -177,7 +177,7 @@ export default function MembersWork() {
             </p>
             <Link
               to="/apply-now"
-              className="mt-6 inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-accent-deep to-accent text-white font-600 hover:shadow-[0_0_32px_rgba(124,58,237,0.5)] transition-shadow"
+              className="mt-6 inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-accent-deep to-accent text-white font-600 hover:shadow-[0_0_32px_rgba(233,71,63,0.5)] transition-shadow"
             >
               Apply Now <ArrowRight size={18} />
             </Link>
@@ -234,7 +234,7 @@ export default function MembersWork() {
             </h2>
             <Link
               to="/apply-now"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-accent-deep to-accent text-white font-600 hover:shadow-[0_0_32px_rgba(124,58,237,0.5)] transition-shadow"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-accent-deep to-accent text-white font-600 hover:shadow-[0_0_32px_rgba(233,71,63,0.5)] transition-shadow"
             >
               Apply Now <ArrowRight size={18} />
             </Link>

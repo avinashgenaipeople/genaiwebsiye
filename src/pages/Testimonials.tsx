@@ -138,7 +138,7 @@ export default function Testimonials() {
                   onClick={() => setActiveFilter(tab.value)}
                   className={`px-5 py-2 rounded-full text-sm font-500 transition-all ${
                     activeFilter === tab.value
-                      ? 'bg-gradient-to-r from-accent-deep to-accent text-white shadow-[0_0_20px_rgba(124,58,237,0.3)]'
+                      ? 'bg-gradient-to-r from-accent-deep to-accent text-white shadow-[0_0_20px_rgba(233,71,63,0.3)]'
                       : 'border border-border-light text-text-muted hover:text-text hover:border-accent/40'
                   }`}
                 >
@@ -234,7 +234,7 @@ export default function Testimonials() {
             </h2>
             <Link
               to="/apply-now"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-accent-deep to-accent text-white font-600 hover:shadow-[0_0_32px_rgba(124,58,237,0.5)] transition-shadow"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-accent-deep to-accent text-white font-600 hover:shadow-[0_0_32px_rgba(233,71,63,0.5)] transition-shadow"
             >
               Apply Now <ArrowRight size={18} />
             </Link>

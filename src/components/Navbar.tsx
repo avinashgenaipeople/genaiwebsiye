@@ -43,7 +43,7 @@ export default function Navbar() {
           ))}
           <Link
             to="/apply-now"
-            className="ml-3 px-5 py-2 rounded-lg bg-gradient-to-r from-accent-deep to-accent text-white text-sm font-600 hover:shadow-[0_0_24px_rgba(124,58,237,0.4)] transition-shadow"
+            className="ml-3 px-5 py-2 rounded-lg bg-gradient-to-r from-accent-deep to-accent text-white text-sm font-600 hover:shadow-[0_0_24px_rgba(233,71,63,0.4)] transition-shadow"
           >
             Apply Now
           </Link>
