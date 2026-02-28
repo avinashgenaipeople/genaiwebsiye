@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Calendar, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import AnimatedSection from '../components/AnimatedSection'
 
 export default function ApplyNow() {
@@ -27,21 +27,17 @@ export default function ApplyNow() {
         </div>
       </section>
 
-      {/* Calendly Placeholder */}
+      {/* Synamate Booking Widget */}
       <section className="py-12">
-        <div className="mx-auto max-w-3xl px-6">
+        <div className="mx-auto max-w-4xl px-6">
           <AnimatedSection>
-            <div className="glass-card rounded-2xl min-h-[500px] flex flex-col items-center justify-center text-center p-10">
-              <div className="w-16 h-16 rounded-2xl bg-accent-deep/15 flex items-center justify-center mb-6">
-                <Calendar size={28} className="text-accent" />
-              </div>
-              <h2 className="font-display font-600 text-2xl text-text mb-3">
-                Schedule your call
-              </h2>
-              <p className="text-text-muted max-w-md leading-relaxed">
-                The booking widget will appear here. Pick a time that works best for you
-                and we will connect to discuss your AI career transition.
-              </p>
+            <div className="rounded-2xl overflow-hidden bg-white" style={{ minHeight: 700 }}>
+              <iframe
+                src="https://share.synamate.com/widget/booking/VJB7hTh1nOeiPF7PtjLr"
+                style={{ width: '100%', height: 700, border: 'none' }}
+                title="Book a strategy call"
+                allow="payment"
+              />
             </div>
           </AnimatedSection>
         </div>
