@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import AnimatedSection from '../components/AnimatedSection'
@@ -87,13 +87,38 @@ const filterTabs = [
   { label: 'Senior Leadership', value: 'senior' },
 ]
 
+function toSlug(name: string) {
+  return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+}
+
 export default function Testimonials() {
   const [activeFilter, setActiveFilter] = useState('all')
+  const location = useLocation()
 
   const filtered =
     activeFilter === 'all'
       ? testimonials
       : testimonials.filter((t) => t.category === activeFilter)
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.slice(1)
+      // Find matching testimonial and set the right filter
+      const match = testimonials.find((t) => toSlug(t.name) === id)
+      if (match && match.category !== activeFilter && activeFilter !== 'all') {
+        setActiveFilter('all')
+      }
+      // Delay scroll to allow DOM to render after filter change
+      setTimeout(() => {
+        const el = document.getElementById(id)
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+          el.classList.add('ring-2', 'ring-accent/60')
+          setTimeout(() => el.classList.remove('ring-2', 'ring-accent/60'), 2000)
+        }
+      }, 300)
+    }
+  }, [location.hash])
 
   return (
     <div className="pt-16">
@@ -162,7 +187,7 @@ export default function Testimonials() {
                 exit={{ opacity: 0, y: 20 }}
                 transition={{ duration: 0.4, delay: i * 0.06 }}
               >
-                <div className="glass-card rounded-2xl p-6 h-full flex flex-col hover:border-accent/30 transition-all">
+                <div id={toSlug(t.name)} className="glass-card rounded-2xl p-6 h-full flex flex-col hover:border-accent/30 transition-all">
                   {/* Header */}
                   <div className="flex items-start gap-3 mb-4">
                     <div className="w-11 h-11 rounded-full bg-gradient-to-br from-accent/30 to-accent-deep/30 flex items-center justify-center font-display font-700 text-sm text-accent shrink-0">

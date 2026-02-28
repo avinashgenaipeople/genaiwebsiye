@@ -205,7 +205,7 @@ export default function Home() {
 
           <div className="flex animate-[scroll_40s_linear_infinite] hover:[animation-play-state:paused] w-max gap-6 px-6">
             {[...testimonials, ...testimonials].map((t, i) => (
-              <div key={i} className="glass-card rounded-2xl p-6 flex flex-col w-[340px] shrink-0">
+              <Link key={i} to={`/testimonials#${t.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`} className="glass-card rounded-2xl p-6 flex flex-col w-[340px] shrink-0 hover:border-accent/30 transition-all cursor-pointer">
                 <div className="flex items-center gap-3 mb-4">
                   {t.image ? (
                     <img src={t.image} alt={t.name} className="w-10 h-10 rounded-full object-cover border border-border-light" />
@@ -227,7 +227,7 @@ export default function Home() {
                     </svg>
                   ))}
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

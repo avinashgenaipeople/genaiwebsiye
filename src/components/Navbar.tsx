@@ -19,9 +19,7 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/60 bg-bg/80 backdrop-blur-xl">
       <div className="mx-auto max-w-7xl px-6 flex items-center justify-between h-16">
         <Link to="/" className="flex items-center gap-2.5 group">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-bright to-accent-deep flex items-center justify-center font-display font-800 text-sm text-white">
-            G
-          </div>
+          <img src="/images/logo-icon.svg" alt="GenAI People" className="w-8 h-8" />
           <span className="font-display font-700 text-lg tracking-tight text-text">
             GenAI<span className="text-accent">People</span>
           </span>
