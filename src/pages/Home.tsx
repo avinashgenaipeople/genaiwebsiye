@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowRight, Users, Cpu, Rocket, Crown, ChevronDown, ExternalLink } from 'lucide-react'
+import { ArrowRight, Users, Cpu, Rocket, Crown, ChevronDown } from 'lucide-react'
 import AnimatedSection from '../components/AnimatedSection'
 
 const testimonials = [
@@ -100,12 +100,6 @@ const projects = [
     desc: 'An autonomous monitoring agent that tracks trends, analyzes sentiment, triggers alerts, and generates insight summaries in real-time.',
     tags: ['OpenAI', 'Agents', 'Real-time'],
   },
-]
-
-const publications = [
-  { platform: 'Medium', title: 'Quick Overview of LLMs', author: 'Sunil Vijendra', date: 'March 2024' },
-  { platform: 'LinkedIn', title: 'What is a Neural Network?', author: 'Punyakeerthi BL', date: 'February 2024' },
-  { platform: 'Dev.to', title: 'Generative AI: Role in the AI Field', author: 'Manjunath R', date: 'January 2024' },
 ]
 
 const faqs = [
@@ -332,31 +326,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Publications */}
-      <section className="py-24 bg-surface">
-        <div className="mx-auto max-w-7xl px-6">
-          <AnimatedSection className="text-center mb-14">
-            <h2 className="font-display font-700 text-3xl md:text-4xl">Mentee Publications</h2>
-            <p className="mt-4 text-text-muted">Insights and learnings shared by our community</p>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {publications.map((pub, i) => (
-              <AnimatedSection key={i} delay={i * 0.1}>
-                <div className="glass-card rounded-2xl p-6 group hover:border-accent/30 transition-all">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="tech-tag">{pub.platform}</span>
-                    <ExternalLink size={14} className="text-text-dim group-hover:text-accent transition-colors" />
-                  </div>
-                  <h3 className="font-display font-600 text-base text-text mb-2">{pub.title}</h3>
-                  <p className="text-xs text-text-dim">by {pub.author}</p>
-                  <p className="text-xs text-text-dim mt-1">{pub.date}</p>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Final CTA */}
       <section className="relative py-24 overflow-hidden">
