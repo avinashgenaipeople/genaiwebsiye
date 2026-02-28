@@ -32,12 +32,7 @@ const programPoints = [
 
 const team = [
   {
-    name: 'Jerry Kurian',
-    role: 'Chief Mentor',
-    desc: '25+ years of deep technical expertise and 20+ years in education',
-  },
-  {
-    name: 'Sowmya Monohar',
+    name: 'Sowmya Manohar',
     role: 'Account Manager',
     desc: '17+ years as a techie and engineering leader',
   },
@@ -197,7 +192,7 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* Meet Our Team */}
+      {/* Founder Spotlight */}
       <section className="py-24 bg-surface">
         <div className="mx-auto max-w-7xl px-6">
           <AnimatedSection className="text-center mb-14">
@@ -210,7 +205,47 @@ export default function AboutUs() {
             </p>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Jerry Kurian - Founder spotlight */}
+          <AnimatedSection delay={0.1}>
+            <div className="glass-card rounded-2xl p-8 md:p-12 mb-12 hover:border-accent/30 transition-all">
+              <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
+                <div className="shrink-0">
+                  <div className="w-48 h-48 md:w-56 md:h-56 rounded-2xl overflow-hidden border-2 border-accent/20 shadow-[0_0_40px_rgba(233,71,63,0.15)]">
+                    <img src="/images/jerry-kurian.png" alt="Jerry Kurian" className="w-full h-full object-cover" />
+                  </div>
+                </div>
+                <div className="flex-1 text-center md:text-left">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent/30 bg-accent-deep/10 text-xs font-mono text-accent mb-4">
+                    Founder & Chief Mentor
+                  </div>
+                  <h3 className="font-display font-700 text-2xl md:text-3xl text-text mb-3">
+                    Jerry Kurian
+                  </h3>
+                  <p className="text-accent italic text-base mb-4">
+                    "Empowering mentees to excel in both technical expertise and professional development"
+                  </p>
+                  <p className="text-text-muted leading-relaxed mb-4">
+                    With 25 years of deep technical expertise and a strong customer focus,
+                    Jerry leverages his extensive experience to guide mentees in unlocking
+                    their full potential and achieving transformative career success. His
+                    hands-on mentorship approach goes beyond teaching — it's a partnership
+                    that shapes how you think about problems, systems, and your career.
+                  </p>
+                  <a
+                    href="https://www.linkedin.com/in/jerryk/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm text-accent hover:text-accent-bright transition-colors font-500"
+                  >
+                    Connect on LinkedIn <ArrowRight size={15} />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </AnimatedSection>
+
+          {/* Rest of the team */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {team.map((member, i) => (
               <AnimatedSection key={i} delay={i * 0.08}>
                 <div className="glass-card rounded-2xl p-6 group hover:border-accent/30 transition-all h-full flex flex-col items-center text-center">
