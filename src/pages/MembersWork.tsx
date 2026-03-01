@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowRight, ExternalLink } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import AnimatedSection from '../components/AnimatedSection'
 
 const projects = [
@@ -45,51 +45,6 @@ const projects = [
     image: '/images/project-6.png',
     desc: 'A tool-using AI assistant that analyzes hotel reviews, pricing, amenities, and location data, then generates structured comparisons for informed decisions.',
     tags: ['OpenAI', 'Tool-calling', 'Agents'],
-  },
-]
-
-const publications = [
-  {
-    platform: 'Medium',
-    title: 'Quick Overview of LLMs',
-    author: 'Sunil Vijendra',
-    desc: 'A quick view of the LLM world, covering LLM Evolution, applications, Multi-Model LLMs.',
-    date: 'March 2024',
-  },
-  {
-    platform: 'LinkedIn',
-    title: 'What is a Neural Network?',
-    author: 'Punyakeerthi BL',
-    desc: 'Neural Networks, the foundational concept behind ML and DL.',
-    date: 'February 2024',
-  },
-  {
-    platform: 'Dev.to',
-    title: 'Generative AI: Role in the AI Field',
-    author: 'Manjunath R',
-    desc: 'Generative AI technology designed to produce diverse content.',
-    date: 'January 2024',
-  },
-  {
-    platform: 'Medium',
-    title: 'Microservices Architecture',
-    author: 'Priya Sharma',
-    desc: 'Independent scaling, resilience, and flexibility.',
-    date: 'December 2023',
-  },
-  {
-    platform: 'Dev.to',
-    title: "OpenAI's Assistants API: A Simple Guide",
-    author: 'Rajesh Kumar',
-    desc: 'Structured way to build AI assistants with memory.',
-    date: 'November 2023',
-  },
-  {
-    platform: 'Medium',
-    title: 'Building an Interactive Order Management System with jQuery',
-    author: 'Amit Patel',
-    desc: 'Dynamic Order Management System using jQuery.',
-    date: 'October 2023',
   },
 ]
 
@@ -182,41 +137,6 @@ export default function MembersWork() {
               Apply Now <ArrowRight size={18} />
             </Link>
           </AnimatedSection>
-        </div>
-      </section>
-
-      {/* Publications */}
-      <section className="py-24 bg-surface">
-        <div className="mx-auto max-w-7xl px-6">
-          <AnimatedSection className="text-center mb-14">
-            <h2 className="font-display font-700 text-3xl md:text-4xl">
-              Mentee <span className="gradient-text">Publications</span>
-            </h2>
-            <p className="mt-4 text-text-muted max-w-2xl mx-auto">
-              Insights, tutorials, and learnings shared by our community across platforms.
-            </p>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {publications.map((pub, i) => (
-              <AnimatedSection key={i} delay={i * 0.08}>
-                <div className="glass-card rounded-2xl p-6 group hover:border-accent/30 transition-all h-full flex flex-col">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="tech-tag">{pub.platform}</span>
-                    <ExternalLink size={14} className="text-text-dim group-hover:text-accent transition-colors" />
-                  </div>
-                  <h3 className="font-display font-600 text-base text-text mb-2 group-hover:text-accent-bright transition-colors">
-                    {pub.title}
-                  </h3>
-                  <p className="text-sm text-text-muted leading-relaxed flex-1 mb-3">{pub.desc}</p>
-                  <div className="flex items-center justify-between text-xs text-text-dim mt-auto pt-3 border-t border-border">
-                    <span>by {pub.author}</span>
-                    <span>{pub.date}</span>
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
         </div>
       </section>
 
